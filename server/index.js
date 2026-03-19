@@ -106,11 +106,9 @@ function client(){
    const sql = "SELECT * FROM client";
   db.query(sql, (err, results) => {
     if (err) {
-      return res.status(500).json({
-        error: "Erreur côté serveur concernant les clients",
-      });
+      return console.log("Erreur côté serveur concernant les clients");
     } else {
-      console.log (res.json(results));
+      console.log (results);
     }
   });
 }
