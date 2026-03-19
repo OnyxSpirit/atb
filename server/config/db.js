@@ -4,7 +4,7 @@ import doteven from 'dotenv';
 doteven.config();
 
 const db = mysql.createConnection({
-    host:'cv1vlj.myd.infomaniak.com',
+    host:'http://cv1vlj.myd.infomaniak.com',
     user:'cv1vlj_atb_user',
     password:'JesusChrist_5',
     database:'cv1vlj_atb'
