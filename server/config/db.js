@@ -4,7 +4,7 @@ import doteven from 'dotenv';
 doteven.config();
 
 const db = mysql.createConnection({
-    host:'sql206.ezyro.com',
+    host:'http://sql206.ezyro.com/',
     user:'ezyro_41219582',
     password:'JesusChrist_5',
     database:'ezyro_41219582_atb'
