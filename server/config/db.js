@@ -6,8 +6,8 @@ const db = mysql.createConnection({
     host: process.env.VITE_HOST,
     user:process.env.VITE_USER,
     password:process.env.VITE_PASSWORD,
-    database:process.env.VITE_DATABASE',
-    port:process.env.VITE_PORT
+    database:process.env.VITE_DATABASE'
+    
 });
 
 export default db;
