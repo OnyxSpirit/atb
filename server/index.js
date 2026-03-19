@@ -25,8 +25,15 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 // --- Middlewares globaux ---
-
-app.use(cors());
+// Configuration précise du CORS
+const corsOptions = {
+  origin: 'https://atb-manager.netlify.app', // Ton frontend uniquement
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Si tu utilises des cookies ou des tokens
+  optionsSuccessStatus: 200 // Pour les navigateurs plus anciens (ou 204)
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/uploads", express.static(uploadDir)); // Maintenant 'app' est défini !
