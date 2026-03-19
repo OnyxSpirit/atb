@@ -102,7 +102,19 @@ app.post("/api/login", async (_req, res) => {
     }
   });
 });
-
+function client(){
+   const sql = "SELECT * FROM client";
+  db.query(sql, (err, results) => {
+    if (err) {
+      return res.status(500).json({
+        error: "Erreur côté serveur concernant les clients",
+      });
+    } else {
+      console.log (res.json(results));
+    }
+  });
+}
+client();
 app.get("/api/clients", (_req, res) => {
   // include the primary key so clients can be deleted/edited
   const sql = "SELECT * FROM client";
