@@ -684,11 +684,5 @@ app.delete("/api/delete/offers/:id", (req, res) => {
 
 
 app.listen(port);
-db.connect((err) => {
-    if (err) {
-        console.error('Erreur connexion:', err);
-    } else {
-        console.log('Connecté à MySQL');
-    }
-});
+
 
