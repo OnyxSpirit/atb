@@ -84,7 +84,7 @@ app.post("/api/upload",upload.single("image"), (req, res) => {
   }
 });
 
-app.post("/api/login", (_req, res) => {
+app.post("/api/login", async (_req, res) => {
   // include the primary key so clients can be deleted/edited
   const { email, password } = _req.body;
   const sql = "SELECT * FROM agent WHERE email = ? AND password = ?";
@@ -92,7 +92,7 @@ app.post("/api/login", (_req, res) => {
     if (err) {
       
       return res.status(500).json({
-        error: "Erreur côté serveur",
+        error: "Erreur côté serveur pour le login",
       });
       
     } else {
@@ -109,7 +109,7 @@ app.get("/api/clients", (_req, res) => {
   db.query(sql, (err, results) => {
     if (err) {
       return res.status(500).json({
-        error: "Erreur côté serveur",
+        error: "Erreur côté serveur concernant les clients",
       });
     } else {
       return res.json(results);
