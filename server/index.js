@@ -86,8 +86,8 @@ app.post("/api/upload",upload.single("image"), (req, res) => {
 
 app.post("/api/login", async (_req, res) => {
   // include the primary key so clients can be deleted/edited
-  await const { email, password } = _req.body;
-  await const sql = "SELECT * FROM agent WHERE email = ? AND password = ?";
+  const { email, password } = _req.body;
+  const sql = "SELECT * FROM agent WHERE email = ? AND password = ?";
   await db.query(sql, [email, password], (err, results) => {
     if (err) {
       
