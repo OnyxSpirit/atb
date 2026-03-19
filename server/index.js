@@ -3,7 +3,7 @@ import session from "express-session";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import db from "./config/db.js";
+import {db} from "./config/db.js";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
@@ -102,11 +102,11 @@ app.post("/api/login", async (_req, res) => {
     }
   });
 });
-function client(){
+async function client(){
    const sql = "SELECT * FROM client";
-  db.query(sql, (err, results) => {
+  await db.query(sql, (err, results) => {
     if (err) {
-      return console.log("Erreur côté serveur concernant les clients");
+       console.log("Erreur dans la fonction de recuperation côté serveur concernant les clients");
     } else {
       console.log (results);
     }
