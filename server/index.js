@@ -102,17 +102,7 @@ app.post("/api/login", async (_req, res) => {
     }
   });
 });
-async function client(){
-   const sql = "SELECT * FROM client";
-  await db.query(sql, (err, results) => {
-    if (err) {
-       console.log("Erreur dans la fonction de recuperation côté serveur concernant les clients");
-    } else {
-      console.log (results);
-    }
-  });
-}
-client();
+
 app.get("/api/clients", (_req, res) => {
   // include the primary key so clients can be deleted/edited
   const sql = "SELECT * FROM client";
@@ -694,3 +684,11 @@ app.delete("/api/delete/offers/:id", (req, res) => {
 
 
 app.listen(port);
+db.connect((err) => {
+    if (err) {
+        console.error('Erreur connexion:', err);
+    } else {
+        console.log('Connecté à MySQL');
+    }
+});
+
