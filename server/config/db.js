@@ -4,10 +4,10 @@ import doteven from 'dotenv';
 doteven.config();
 
 const db = mysql.createConnection({
-    host:'http://cv1vlj.myd.infomaniak.com',
-    user:'cv1vlj_atb_user',
+    host:'sql206.ezyro.com',
+    user:'ezyro_41219582',
     password:'JesusChrist_5',
-    database:'cv1vlj_atb'
+    database:'ezyro_41219582_atb'
 });
 /*
 host: process.env.VITE_HOST || 'cv1vlj.myd.infomaniak.com',
