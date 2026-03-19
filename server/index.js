@@ -29,7 +29,7 @@ if (!fs.existsSync(uploadDir)) {
 const corsOptions = {
   origin: 'https://atb-manager.netlify.app', // Ton frontend uniquement
   methods: 'GET,POST,PUT,DELETE,OPTIONS',
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Origin'],
   credentials: true, // Si tu utilises des cookies ou des tokens
   optionsSuccessStatus: 200 // Pour les navigateurs plus anciens (ou 204)
 };
