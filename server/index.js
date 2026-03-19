@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express(); // Initialisation de 'app' AVANT utilisation
-const port =  5000; // process.env.VITE_PORT ||
+const port =  process.env.VITE_PORT || 5000; // process.env.VITE_PORT ||
 
 // --- Configuration du dossier Uploads ---
 const uploadDir = path.join(__dirname, "uploads");
