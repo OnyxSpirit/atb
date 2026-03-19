@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express(); // Initialisation de 'app' AVANT utilisation
-const port = process.env.VITE_PORT;
+const port = process.env.VITE_PORT || 3306;
 
 // --- Configuration du dossier Uploads ---
 const uploadDir = path.join(__dirname, "uploads");
@@ -86,9 +86,9 @@ app.post("/api/upload",upload.single("image"), (req, res) => {
 
 app.post("/api/login", async (_req, res) => {
   // include the primary key so clients can be deleted/edited
-  const { email, password } = _req.body;
-  const sql = "SELECT * FROM agent WHERE email = ? AND password = ?";
-  db.query(sql, [email, password], (err, results) => {
+  await const { email, password } = _req.body;
+  await const sql = "SELECT * FROM agent WHERE email = ? AND password = ?";
+  await db.query(sql, [email, password], (err, results) => {
     if (err) {
       
       return res.status(500).json({
