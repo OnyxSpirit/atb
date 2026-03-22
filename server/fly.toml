@@ -21,12 +21,3 @@ primary_region = 'ams'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
-
-[mounts]
-  source = "atb_data"
-  destination = "/data"
-
-[build]
-  builder = "gcr.io/buildpacks/builder:v1"
-
-
