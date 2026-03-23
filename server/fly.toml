@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for atb-manager on 2026-03-22T07:42:12Z
+# fly.toml app configuration file generated for atb-zqcwaa on 2026-03-23T06:33:13Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'atb-manager'
+app = 'atb-zqcwaa'
 primary_region = 'ams'
 
 [build]
@@ -20,4 +20,4 @@ primary_region = 'ams'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 256
+  memory_mb = 1024
